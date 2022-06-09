@@ -1,0 +1,40 @@
+
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<table>
+  <thead>
+  <th>id</th>
+  <th>name</th>
+  <th>email</th>
+  </thead>
+  <tr th:each="list: ${userlist}">
+    <td th:text="${list.id}"></td>
+    <td th:text="${list.name}"></td>
+    <td th:text="${list.email}"></td>
+  </tr>
+</table>
+
+
+
+<h4>Country List</h4>
+<tr th:each="country: ${countries}">
+  <td th:text="${country}" />
+  <td><br/></td>
+</tr>
+<h4>User List</h4>
+<tr th:each="myuser: ${myuserAttribute}">
+  <td th:text="${myuser.id}" />
+  <td th:text="${myuser.name}" />
+  <td th:text="${myuser.email}" />
+  <td><br/></td>
+</tr>
+
+<h1 th:text="${username}"></h1>
+</body>
+</html>
+

@@ -4,6 +4,9 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @NoArgsConstructor
@@ -11,10 +14,12 @@ import java.util.Objects;
 @Setter @Getter @ToString
 @Slf4j
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Entity
 public class Student {
 
     //fields
 
+    @Id @Column(columnDefinition = "VARCHAR(100)")
     String email;
     String name;
     String password;
